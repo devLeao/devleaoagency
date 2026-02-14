@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
+@theme {
+  --color-devpurple: #6D28D9;
+  --color-devpurple-dark: #4C1D95;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* --- Base & Scroll Suave --- */
+html {
+  scroll-behavior: smooth !important;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  /* Cursor Padrão (Bolinha Roxa) - O '8 8' centraliza o clique */
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%236D28D9'/%3E%3C/svg%3E") 8 8, auto;
+}
+
+/* Ajuste de margem para âncoras (evita que a navbar cubra o título da seção) */
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* --- Cursor para Elementos Clicáveis (Aro Roxo) --- */
+a, button, [role="button"], input, textarea, select {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='8' fill='none' stroke='%236D28D9' stroke-width='2'/%3E%3C/svg%3E") 12 12, pointer !important;
+}
+
+/* --- Animações de Looping --- */
+
+/* Marquee Horizontal (Tecnologias) */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content; 
+  animation: marquee 30s linear infinite;
+}
+
+/* Looping Vertical (Hero Background) */
+@keyframes slideUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-33.333%); }
+}
+
+.animate-slide-up {
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 40s linear infinite !important;
+  will-change: transform;
+}
+
+/* Efeito de Flutuar (Imagens/Badges) */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* --- Scrollbar Personalizada --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6D28D9;
+  border-radius: 10px;
+  border: 2px solid #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4C1D95;
 }
