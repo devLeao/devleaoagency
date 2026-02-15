@@ -446,11 +446,14 @@ export default function Home() {
           Além disso, você conta com nossa garantia total de satisfação.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4">
-          <button className="bg-devpurple hover:bg-devpurple-dark text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-devpurple/20 uppercase text-sm tracking-widest active:scale-95">
-            Garantir meu projeto agora
-          </button>
-        </div>
+     <div className="flex flex-col sm:flex-row gap-4">
+  <a 
+    href="#contato"
+    className="bg-devpurple hover:bg-devpurple-dark text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-devpurple/20 uppercase text-sm tracking-widest active:scale-95 cursor-pointer text-center"
+  >
+    Garantir meu projeto agora
+  </a>
+</div>
       </div>
 
       {/* Lado Direito: Imagem da Garantia */}

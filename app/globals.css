@@ -20,11 +20,11 @@ body {
   color: var(--foreground);
   font-family: sans-serif;
   overflow-x: hidden;
-  /* Cursor Padrão (Bolinha Roxa) - O '8 8' centraliza o clique */
+  /* Cursor Padrão (Bolinha Roxa) */
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%236D28D9'/%3E%3C/svg%3E") 8 8, auto;
 }
 
-/* Ajuste de margem para âncoras (evita que a navbar cubra o título da seção) */
+/* Ajuste de margem para âncoras */
 section[id] {
   scroll-margin-top: 100px;
 }
@@ -34,9 +34,7 @@ a, button, [role="button"], input, textarea, select {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='8' fill='none' stroke='%236D28D9' stroke-width='2'/%3E%3C/svg%3E") 12 12, pointer !important;
 }
 
-/* --- Animações de Looping --- */
-
-/* Marquee Horizontal (Tecnologias) */
+/* --- Animações --- */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -48,7 +46,6 @@ a, button, [role="button"], input, textarea, select {
   animation: marquee 30s linear infinite;
 }
 
-/* Looping Vertical (Hero Background) */
 @keyframes slideUp {
   from { transform: translateY(0); }
   to { transform: translateY(-33.333%); }
@@ -61,7 +58,6 @@ a, button, [role="button"], input, textarea, select {
   will-change: transform;
 }
 
-/* Efeito de Flutuar (Imagens/Badges) */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
@@ -71,7 +67,7 @@ a, button, [role="button"], input, textarea, select {
   animation: float 4s ease-in-out infinite;
 }
 
-/* --- Scrollbar Personalizada --- */
+/* --- Scrollbar --- */
 ::-webkit-scrollbar {
   width: 10px;
 }
